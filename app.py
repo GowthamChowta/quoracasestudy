@@ -26,7 +26,7 @@ bst.load_model('Artifacts/model_ver.pkl')
 # model=joblib.load('Artifacts/model_ver.pkl')
 cols=joblib.load('Artifacts/columns.pkl')
 
-from flask import Flask,render_template,request
+from flask import Flask,render_template,request,url_for
 app = Flask(__name__)
 
 train_org= pd.read_csv('train.csv')
@@ -219,10 +219,11 @@ def predict():
         X=X[cols]
 
         x = xgb.DMatrix(X)
-        if(bst.predict(x)>0.5):
-            return 'similar'
+        pred=bst.predict(x)
+        if(pred>0.5):
+            return render_template("results.html",sim='Similar',score=pred)
         else:
-            return 'dissimilar'
+            return render_template("results.html",sim='Disimilar',score=pred)
 
 
 @app.route('/')

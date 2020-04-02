@@ -1,0 +1,20 @@
+.compose{
+  padding: 3% 10%;
+}
+
+.results{
+  background-color: #eaf6f6;
+  color: black;
+  text-align: center;
+  padding-top: 5%;
+  font-family: 'Baloo Thambi 2', cursive;
+}
+
+body{
+  font-family: 'Baloo Thambi 2', cursive;
+}
+
+img{
+  height: 300px;
+  width: 400px;
+}

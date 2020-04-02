@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Results</title>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/styles.css') }}">
+
+  </head>
+  <body class="results">
+    <div class="container">
+      <h1>The two senteneces have a similarity score of {{score}}</h1>
+      <h5>Considering 0.5 as threshold </h5>
+      <h2>The two items are {{sim}}</h2>
+      {%if (sim)=='Similar'%}
+        <img src="https://www.netclipart.com/pp/m/89-897448_twins-animated-twin-babies-drawings.png" alt="Similar">
+      {% else %}
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTErVcHtCikJ0uFxEGV-d-r_zPM_r5lAV6IMxcjpOnihmdgtDpz&usqp=CAU" alt="">
+      {% endif %}
+    </div>
+  </body>
+</html>
