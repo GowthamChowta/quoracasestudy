@@ -1,6 +1,6 @@
 numpy==1.16.6
 pandas==0.22.0
-joblib==0.13.2
+joblib==1.2.0
 nltk==3.4.5
 regex
 spacy==2.2.4
